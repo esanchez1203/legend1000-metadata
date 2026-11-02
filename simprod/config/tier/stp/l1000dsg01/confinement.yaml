@@ -11,3 +11,37 @@ lar_underground:
   - /RMG/Generator/Confinement/Geometrical/Cylinder/InnerRadius 0 m
   - /RMG/Generator/Confinement/Geometrical/Cylinder/OuterRadius 1 m
   - /RMG/Generator/Confinement/Geometrical/Cylinder/Height 2 m
+
+# atmospheric LAr around the re-entrance tube (outer radius 1.0 m, bottom at z
+# -1.259 m) for 42K, in a cylinder of radius 1.6 m from z -1.8 m up to the top of
+# lar_underground (z 0.69 m): a layer 0.6 m thick around the tube side and 0.54
+# m thick below the tube bottom. About 1% of the unscattered 1525 keV gamma flux
+# at the HPGe array comes from outside it.
+lar_atmospheric_K42:
+  - /RMG/Generator/Confine Volume
+  - /RMG/Generator/Confinement/SamplingMode IntersectPhysicalWithGeometrical
+  - /RMG/Generator/Confinement/Physical/AddVolume liquid_argon_atmospheric
+  - /RMG/Generator/Confinement/Geometrical/AddSolid Cylinder
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionX 0 m
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionY 0 m
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionZ -0.555 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/InnerRadius 0 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/OuterRadius 1.6 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/Height 2.49 m
+
+# atmospheric LAr around the re-entrance tube for 39Ar, in a cylinder of radius
+# 1.4 m from z -1.5 m up to the top of lar_underground (z 0.69 m): a layer 0.4 m
+# thick around the tube side and 0.24 m thick below the tube bottom. Only
+# bremsstrahlung photons (below 565 keV) reach the HPGe array: less than 1% of
+# their unscattered flux comes from outside this cylinder.
+lar_atmospheric_Ar39:
+  - /RMG/Generator/Confine Volume
+  - /RMG/Generator/Confinement/SamplingMode IntersectPhysicalWithGeometrical
+  - /RMG/Generator/Confinement/Physical/AddVolume liquid_argon_atmospheric
+  - /RMG/Generator/Confinement/Geometrical/AddSolid Cylinder
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionX 0 m
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionY 0 m
+  - /RMG/Generator/Confinement/Geometrical/CenterPositionZ -0.405 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/InnerRadius 0 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/OuterRadius 1.4 m
+  - /RMG/Generator/Confinement/Geometrical/Cylinder/Height 2.19 m
