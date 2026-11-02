@@ -5,8 +5,9 @@ production:
   order: 99
   crystal: "999"
   slice: Z
+  # computed as average between L200 material and new material (at 92%)
   enrichment:
-    val: 0.9
+    val: 0.91
     unc: 0.01
   passivation: true
   reprocessing: false
@@ -48,7 +49,7 @@ characterization:
     recommended_voltage_in_V: 3500
   combined_0vbb_analysis:
     fccd_in_mm:
-      value: 0.7
+      value: 1.0
       uncertainty:
         pos: 0.1
         neg: 0.1
