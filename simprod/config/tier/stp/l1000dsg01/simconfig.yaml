@@ -30,9 +30,9 @@ hpge_pplus_surface_K42:
 liquid_argon_K42:
   template: $_/templates/default.mac
   generator: ~defines:K42
-  confinement: ~defines:lar_closer_to_array
-  primaries_per_job: 2_500_000
-  number_of_jobs: 100
+  confinement: ~defines:lar_underground
+  primaries_per_job: 3_500_000
+  number_of_jobs: 72
 
 hpge_icpc_bulk_Ge68:
   template: $_/templates/default.mac
