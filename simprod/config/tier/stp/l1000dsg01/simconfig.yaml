@@ -240,3 +240,17 @@ reentrance_tube_ofhc_Pb214_to_Po214:
   confinement: ~volumes.bulk:reentrance_tube_layer_copper_ofhc
   primaries_per_job: 1_500_000
   number_of_jobs: 200
+
+hpge_support_copper_K40:
+  template: $_/templates/default.mac
+  generator: ~defines:K40
+  confinement: ~volumes.bulk:hpge_string_support_.*_copper_.*
+  primaries_per_job: 3_000_000
+  number_of_jobs: 34
+
+hpge_support_copper_Co60:
+  template: $_/templates/default.mac
+  generator: ~defines:Co60
+  confinement: ~volumes.bulk:hpge_string_support_.*_copper_.*
+  primaries_per_job: 650_000
+  number_of_jobs: 154

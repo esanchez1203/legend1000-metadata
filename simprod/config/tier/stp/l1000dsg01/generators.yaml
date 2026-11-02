@@ -18,6 +18,12 @@ K42:
   - /gps/energy 0 eV
   - /gps/ion 19 42
 
+K40:
+  - /RMG/Generator/Select GPS
+  - /gps/particle ion
+  - /gps/energy 0 eV
+  - /gps/ion 19 40
+
 2vbb:
   - /RMG/Generator/Select BxDecay0
   - /RMG/Generator/BxDecay0/DoubleBetaDecay Ge76 2vbb
