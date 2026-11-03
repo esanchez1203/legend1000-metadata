@@ -25,8 +25,8 @@ scintillators:
         amplitudes: [0.0121, 0.0018, 0.0115]
         absorption_lengths_in_m: [0.0064, 0.078, 2.37]
 
-# the optmap l1000dsg01-ular-optmap-v1.lh5 uses the pygeom-optics PDE
-optmap_scaling_factor: 1
+# the optmap l1000dsg01-ular-optmap-v2.lh5 uses SiPM PDE = 1
+optmap_scaling_factor: 0.3
 store_expected_pes: true
 
 photoelectron_resolution_sigma: 0.3
