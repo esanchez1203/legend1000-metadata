@@ -3,7 +3,7 @@ hpge_icpc_bulk_2vbb:
   generator: ~defines:2vbb
   confinement: ~volumes.bulk:V\d+Z
   primaries_per_job: 30_000_000
-  number_of_jobs: 1
+  number_of_jobs: 10
 
 hpge_icpc_bulk_0vbb:
   template: $_/templates/default.mac
