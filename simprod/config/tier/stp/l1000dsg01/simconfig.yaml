@@ -32,14 +32,14 @@ liquid_argon_K42:
   generator: ~defines:K42
   confinement: ~defines:lar_underground
   primaries_per_job: 3_500_000
-  number_of_jobs: 72
+  number_of_jobs: 100
 
 liquid_argon_atmospheric_K42:
   template: $_/templates/default.mac
   generator: ~defines:K42
   confinement: ~defines:lar_atmospheric_K42
   primaries_per_job: 10_000_000
-  number_of_jobs: 63
+  number_of_jobs: 500
 
 hpge_icpc_bulk_Ge68:
   template: $_/templates/default.mac
@@ -148,7 +148,7 @@ wls_reflector_Pb212_to_Pb208:
   <<: *Th228
   confinement: ~volumes.bulk:(underground|atmospheric)_wlsr_tetratex
   primaries_per_job: 200_000
-  number_of_jobs: 500
+  number_of_jobs: 1000
 
 reentrance_tube_efcu_Pb212_to_Pb208:
   <<: *Th228
@@ -160,7 +160,7 @@ reentrance_tube_ofhc_Pb212_to_Pb208:
   <<: *Th228
   confinement: ~volumes.bulk:reentrance_tube_layer_copper_ofhc
   primaries_per_job: 2_000_000
-  number_of_jobs: 200
+  number_of_jobs: 1000
 
 hpge_support_copper_Pb214_to_Po214: &U238
   template: $_/templates/default.mac
@@ -191,7 +191,7 @@ cables_Pb214_to_Po214:
   <<: *U238
   confinement: ~volumes.bulk:hpge_cable_.*
   primaries_per_job: 300_000
-  number_of_jobs: 100
+  number_of_jobs: 200
 
 cable_connectors_Pb214_to_Po214:
   <<: *U238
@@ -215,7 +215,7 @@ fibers_Pb214_to_Po214:
   <<: *U238
   confinement: ~volumes.bulk:fiber_.*
   primaries_per_job: 150_000
-  number_of_jobs: 300
+  number_of_jobs: 2000
 
 sipm_arrays_Pb214_to_Po214:
   <<: *U238
@@ -227,7 +227,7 @@ wls_reflector_Pb214_to_Po214:
   <<: *U238
   confinement: ~volumes.bulk:(underground|atmospheric)_wlsr_tetratex
   primaries_per_job: 200_000
-  number_of_jobs: 500
+  number_of_jobs: 1000
 
 reentrance_tube_efcu_Pb214_to_Po214:
   <<: *U238
@@ -239,14 +239,14 @@ reentrance_tube_ofhc_Pb214_to_Po214:
   <<: *U238
   confinement: ~volumes.bulk:reentrance_tube_layer_copper_ofhc
   primaries_per_job: 1_500_000
-  number_of_jobs: 500
+  number_of_jobs: 5000
 
 hpge_support_copper_K40:
   template: $_/templates/default.mac
   generator: ~defines:K40
   confinement: ~volumes.bulk:hpge_string_support_.*_copper_.*
   primaries_per_job: 3_000_000
-  number_of_jobs: 34
+  number_of_jobs: 100
 
 hpge_support_copper_Co60:
   template: $_/templates/default.mac
