@@ -160,7 +160,7 @@ reentrance_tube_ofhc_Pb212_to_Pb208:
   <<: *Th228
   confinement: ~volumes.bulk:reentrance_tube_layer_copper_ofhc
   primaries_per_job: 2_000_000
-  number_of_jobs: 1000
+  number_of_jobs: 685
 
 hpge_support_copper_Pb214_to_Po214: &U238
   template: $_/templates/default.mac
@@ -239,7 +239,7 @@ reentrance_tube_ofhc_Pb214_to_Po214:
   <<: *U238
   confinement: ~volumes.bulk:reentrance_tube_layer_copper_ofhc
   primaries_per_job: 1_500_000
-  number_of_jobs: 5000
+  number_of_jobs: 1268
 
 hpge_support_copper_K40:
   template: $_/templates/default.mac
