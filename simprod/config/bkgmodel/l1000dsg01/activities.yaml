@@ -2,22 +2,28 @@ cables:
   description: Cabling - HV & Signal
   reference:
     Arnquist et al., EPJ Techn. Instrum. 10, 17 (2023); R. Saldanha (PNNL), 2026
+  method: icpms
   mass_in_kg: 3.0
   specific_activity_in_uBq_per_kg:
     cables_Pb214_to_Po214: { val: 386, unc: 25 }
     cables_Pb212_to_Pb208: { val: 53, unc: 12 }
 
 detector_mount_efcu:
-  description: Detector Mount (EFCu)
+  description: >-
+    Detector Mount (EFCu). The 40K activity is a guess and stands for the whole
+    40K budget that is reasonable
   reference: LEGEND-1000 CDR v2.1, Table XVII
+  method: icpms
   mass_in_kg: 25.0
   specific_activity_in_uBq_per_kg:
     hpge_support_copper_Pb214_to_Po214: { val: 0.19, unc: 0.10 }
     hpge_support_copper_Pb212_to_Pb208: { val: 0.37, unc: 0.22 }
+    hpge_support_copper_K40: { val: 10000, unc: 5000 } # a guess, see the description
 
 detector_mount_ultem:
   description: Detector Mount (Ultem)
   reference: L-Note 24-014
+  method: hpge
   mass_in_kg: 0.52
   specific_activity_in_uBq_per_kg:
     ultem_insulators_Pb214_to_Po214: { val: 160, unc: 30 }
@@ -26,6 +32,7 @@ detector_mount_ultem:
 optical_fibers:
   description: Optical Fibers
   reference: LEGEND-1000 CDR v2.1, Table XVII
+  method: hpge
   mass_in_kg: 17.8
   specific_activity_in_uBq_per_kg:
     fibers_Pb214_to_Po214: { val: 540, unc: 80 }
@@ -36,6 +43,7 @@ front_end_asic:
   reference: >-
     F. Edzards et al., Investigation of ASIC-based signal readout electronics
     for LEGEND-1000, JINST 15, P09022 (2020)
+  method: hpge
   mass_in_kg: 0.0111
   specific_activity_in_uBq_per_kg:
     front_end_electronics_Pb214_to_Po214: { limit: 2700, cl: 0.9 }
@@ -44,6 +52,7 @@ front_end_asic:
 pen_plates:
   description: PEN Plates (PEN)
   reference: LEGEND-1000 CDR v2.1, Table XVII
+  method: hpge
   mass_in_kg: 2.35
   specific_activity_in_uBq_per_kg:
     pen_plates_Pb214_to_Po214: { val: 65, unc: 12 }
@@ -52,6 +61,7 @@ pen_plates:
 hv_connector_ultem:
   description: HV Connector (Ultem)
   reference: L-Note 24-014
+  method: hpge
   mass_in_kg: 0.13
   specific_activity_in_uBq_per_kg:
     hv_clamps_Pb214_to_Po214: { val: 160, unc: 30 }
@@ -60,6 +70,7 @@ hv_connector_ultem:
 hv_connector_phbr:
   description: HV Connector (Ph-Br)
   reference: L-Note 24-014
+  method: icpms
   mass_in_kg: 0.10
   specific_activity_in_uBq_per_kg:
     hv_clamps_Pb214_to_Po214: { val: 134, unc: 18 }
@@ -68,7 +79,8 @@ hv_connector_phbr:
 fe_mount_ultem:
   description: FE Mount (Ultem)
   reference: L-Note 24-014
-  mass_in_kg: 0.0
+  method: hpge
+  mass_in_kg: 0.08
   specific_activity_in_uBq_per_kg:
     signal_clamps_Pb214_to_Po214: { val: 160, unc: 30 }
     signal_clamps_Pb212_to_Pb208: { val: 140, unc: 20 }
@@ -76,6 +88,7 @@ fe_mount_ultem:
 fe_mount_phbr:
   description: FE Mount (Ph-Br)
   reference: L-Note 24-014
+  method: icpms
   mass_in_kg: 0.10
   specific_activity_in_uBq_per_kg:
     signal_clamps_Pb214_to_Po214: { val: 134, unc: 18 }
@@ -84,6 +97,7 @@ fe_mount_phbr:
 sipms:
   description: SiPMs
   reference: P. Krause, PhD thesis, TUM (2023), Table 9.9
+  method: hpge
   number_of_pieces: 252
   activity_per_piece_in_uBq:
     sipm_arrays_Pb214_to_Po214: { limit: 20.98, cl: 0.9 }
@@ -108,6 +122,7 @@ neutron_moderator:
 reentrance_tube_efcu:
   description: RE Vessel (EFCu)
   reference: LEGEND-1000 CDR v2.1, Table XVII
+  method: icpms
   mass_in_kg: 231
   specific_activity_in_uBq_per_kg:
     reentrance_tube_efcu_Pb214_to_Po214: { val: 0.19, unc: 0.10 }
@@ -116,6 +131,7 @@ reentrance_tube_efcu:
 reentrance_tube_ofhc:
   description: RE Vessel (Comm. Cu)
   reference: Abgrall et al., NIM A 828 (2016) 22
+  method: icpms
   mass_in_kg: 670
   specific_activity_in_uBq_per_kg:
     reentrance_tube_ofhc_Pb214_to_Po214: { val: 1.4, unc: 0.2 }
@@ -124,6 +140,7 @@ reentrance_tube_ofhc:
 wls_reflector:
   description: Reflectors (Tetratex/TPB)
   reference: L-Note 24-014
+  method: hpge
   area_in_m2: 26
   specific_activity_in_uBq_per_m2:
     wls_reflector_Pb214_to_Po214: { val: 78, unc: 30 }
@@ -139,10 +156,55 @@ hpge_detectors:
     hpge_icpc_bulk_Pb214_to_Po214: { limit: 0.001, cl: 0.9 }
     hpge_icpc_bulk_Pb212_to_Pb208: { limit: 0.001, cl: 0.9 }
 
-cryostat_steel:
-  description: Cryostat (stainless steel)
-  reference: B. Schwingenheuer & C. Wiesinger, L.CS review, 22 Jul 2026, p. 9
-  mass_in_kg: 84800
+underground_argon:
+  description: >-
+    42Ar with its progeny 42K, distributed homogeneously in the argon simulated
+    by liquid_argon_K42: the argon inside a cylinder of radius 1.5 m and height
+    3 m around the HPGe array (z from -1.8 m to +1.2 m), 7.3 m3 of underground
+    argon in the reentrance tube and 13.4 m3 of atmospheric argon around it,
+    from the geometry of the simulation. Its mass is 20.7 m3 times 1.39 g/cm3,
+    minus about 0.3 t of detectors and their supports. Specific activity: 42Ar
+    in atmospheric argon, (61.4 +- 5.4) uBq/kg (doi:10.1038/s41567-026-03257-9),
+    divided by the 39Ar depletion factor of underground argon measured by
+    DarkSide-50, 1400 +- 200 (Phys. Rev. D 93, 081101 (2016)), which is a lower
+    limit on the depletion: (0.044 +- 0.007) uBq/kg, quoted as an upper limit at
+    90% CL, 0.044 + 1.28 * 0.007 uBq/kg. The whole simulated argon has the
+    activity of underground argon. The ion drift of 42K towards the detectors is
+    not included
+  reference: LEGEND-1000 CDR v2.1, section XI.B.5
+  mass_in_kg: 28500
   specific_activity_in_uBq_per_kg:
-    cryostat_Pb214_to_Po214: { val: 1840, unc: 120 }
-    cryostat_Pb212_to_Pb208: { val: 880, unc: 80 }
+    liquid_argon_K42: { limit: 0.053, cl: 0.9 }
+
+atmospheric_argon:
+  description: >-
+    42Ar with its progeny 42K, distributed homogeneously in the atmospheric
+    argon simulated by liquid_argon_atmospheric_K42. Specific activity: 42Ar in
+    atmospheric argon, (61.4 +- 5.4) uBq/kg (doi:10.1038/s41567-026-03257-9).
+    The mass is a rough estimate, the 13.4 m3 of atmospheric argon around the
+    reentrance tube of underground_argon: its 28500 kg minus the 9800 kg inside
+    the tube
+  reference: LEGEND-1000 CDR v2.1, section XI.B.5
+  mass_in_kg: 18700
+  specific_activity_in_uBq_per_kg:
+    liquid_argon_atmospheric_K42: { val: 61.4, unc: 5.4 }
+
+hpge_surface:
+  description: >-
+    42K from the 42Ar of the underground argon, collected by the HPGe detectors,
+    as one activity. Half of it is on the n+ and p+ surfaces: the simulations
+    hpge_nplus_surface_K42 and hpge_pplus_surface_K42 get half of it, by their
+    areas, and the other half stays homogeneous in the argon, in
+    liquid_argon_K42. The 42Ar of the underground argon within the region
+    simulated by liquid_argon_K42 (see underground_argon), about 1 m around the
+    array, is collected on the detectors: 7.3 m3 inside the reentrance tube,
+    minus about 0.2 m3 of detectors and their supports, times 1.39 g/cm3, 9800
+    kg, times 0.053 uBq/kg (upper limit at 90% CL) = 520 uBq. The argon outside
+    the tube is not collected. The area is that of the n+ and p+ surfaces of the
+    336 detectors, 12.61 m2 and 0.152 m2 from pygeom-hpges for the V99999Z
+    design: 40.8 uBq/m2. The passivated surfaces (0.200 m2) have no simulation,
+    and their share is on the n+ and p+ surfaces
+  reference: LEGEND-1000 CDR v2.1, section XI.B.5
+  area_in_m2: 12.762
+  specific_activity_in_uBq_per_m2:
+    hpge_surface_K42: { limit: 40.8, cl: 0.9 }
